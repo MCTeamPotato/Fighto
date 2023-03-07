@@ -1,0 +1,13 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "GPLv3"
+issueTrackerURL = "https://github.com/MCTeamPotato/Art-of-Combat/issues"
+
+[[mods]]
+modId = "artofcombat"
+version = "${version}"
+displayName = "Art of Combat"
+authors="Team Potato"
+description = '''
+
+'''
