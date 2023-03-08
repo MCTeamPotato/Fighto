@@ -1,6 +1,7 @@
 package com.teampotato.fighto.event;
 
 import com.teampotato.fighto.Fighto;
+import com.teampotato.fighto.util.CompoundTagUtil;
 import net.minecraft.client.gui.screens.inventory.EnchantmentScreen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.*;
@@ -31,9 +32,7 @@ public class FightoEventHandler {
                         item instanceof TridentItem
                 )
         ) {
-            CompoundTag tag = itemStack.getOrCreateTag();
-            tag.putInt("Unbreakable", 1);
-            itemStack.setTag(tag);
+            CompoundTagUtil.setUnbreakable(itemStack);
         }
     }
 }
