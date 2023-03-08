@@ -3,7 +3,6 @@ package com.teampotato.fighto.event;
 import com.teampotato.fighto.Fighto;
 import net.minecraft.client.gui.screens.inventory.EnchantmentScreen;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.IntTag;
 import net.minecraft.world.item.*;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,7 +28,8 @@ public class FightoEventHandler {
                         item instanceof ShovelItem
                 )
         ) {
-            itemStack.setTag(itemStack.getOrCreateTag().merge((CompoundTag) new CompoundTag().put("Unbreakable", IntTag.valueOf(1))));
+            CompoundTag tag = itemStack.getOrCreateTag();
+            tag.putInt("Unbreakable", 1);
         }
     }
 }
