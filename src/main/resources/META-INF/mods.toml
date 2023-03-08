@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[36,)"
 license = "GPLv3"
-issueTrackerURL = "https://github.com/MCTeamPotato/Art-of-Combat/issues"
+issueTrackerURL = "https://github.com/MCTeamPotato/Fighto/issues"
 
 [[mods]]
 modId = "fighto"
