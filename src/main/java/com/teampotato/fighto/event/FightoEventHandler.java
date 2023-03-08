@@ -25,7 +25,10 @@ public class FightoEventHandler {
                         item instanceof AxeItem ||
                         item instanceof HoeItem ||
                         item instanceof PickaxeItem ||
-                        item instanceof ShovelItem
+                        item instanceof ShovelItem ||
+                        item instanceof BowItem ||
+                        item instanceof CrossbowItem ||
+                        item instanceof TridentItem
                 )
         ) {
             CompoundTag tag = itemStack.getOrCreateTag();
