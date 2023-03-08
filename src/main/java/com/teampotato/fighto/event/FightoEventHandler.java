@@ -3,7 +3,6 @@ package com.teampotato.fighto.event;
 import com.teampotato.fighto.Fighto;
 import com.teampotato.fighto.util.CompoundTagUtil;
 import net.minecraft.client.gui.screens.inventory.EnchantmentScreen;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.*;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,8 +17,9 @@ public class FightoEventHandler {
     public static void onItemIntoEnchantSlot(GuiScreenEvent.MouseClickedEvent.Pre event) {
         if (!(event.getGui() instanceof EnchantmentScreen)) return;
         ItemStack itemStack = Objects.requireNonNull(((EnchantmentScreen) event.getGui()).getSlotUnderMouse()).getItem();
+        if (itemStack.isEmpty()) return;
         Item item = itemStack.getItem();
-        if (!itemStack.isEmpty() && Fighto.UNBREAKABLE_WEAPONS_AND_ARMORS.get() && !itemStack.getOrCreateTag().contains("Unbreakable")
+        if (Fighto.UNBREAKABLE_WEAPONS_AND_ARMORS.get() && !itemStack.getOrCreateTag().contains("Unbreakable")
                 && (
                         item instanceof ArmorItem ||
                         item instanceof SwordItem ||
