@@ -18,7 +18,7 @@ public class FightoEventHandler {
         if (!(event.getGui() instanceof EnchantmentScreen)) return;
         ItemStack itemStack = Objects.requireNonNull(((EnchantmentScreen) event.getGui()).getSlotUnderMouse()).getItem();
         Item item = itemStack.getItem();
-        if (!itemStack.isEmpty() && Fighto.UNBREAKABLE_WEAPONS_AND_ARMORS.get()
+        if (!itemStack.isEmpty() && Fighto.UNBREAKABLE_WEAPONS_AND_ARMORS.get() && !itemStack.getOrCreateTag().contains("Unbreakable")
                 && (
                         item instanceof ArmorItem ||
                         item instanceof SwordItem ||
