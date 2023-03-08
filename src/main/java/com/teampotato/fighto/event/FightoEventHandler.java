@@ -33,6 +33,7 @@ public class FightoEventHandler {
         ) {
             CompoundTag tag = itemStack.getOrCreateTag();
             tag.putInt("Unbreakable", 1);
+            itemStack.setTag(tag);
         }
     }
 }
