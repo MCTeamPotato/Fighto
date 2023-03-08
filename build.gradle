@@ -13,13 +13,13 @@ loom {
     silentMojangMappingsLicense()
     forge {
         mixinConfigs = [
-                "artofcombat.mixins.json"
+                "fighto.mixins.json"
         ]
         dataGen {
             mod project.mod_id
         }
     }
-    mixin.defaultRefmapName = "artofcombat.refmap.json"
+    mixin.defaultRefmapName = "fighto.refmap.json"
 
     launches {
         data {

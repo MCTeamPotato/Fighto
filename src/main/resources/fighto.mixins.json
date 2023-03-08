@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.teampotato.artofcombat.mixin",
+  "package": "com.teampotato.fighto.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],

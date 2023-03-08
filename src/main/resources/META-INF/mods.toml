@@ -4,9 +4,9 @@ license = "GPLv3"
 issueTrackerURL = "https://github.com/MCTeamPotato/Art-of-Combat/issues"
 
 [[mods]]
-modId = "artofcombat"
+modId = "fighto"
 version = "${version}"
-displayName = "Art of Combat"
+displayName = "Fighto"
 authors="Team Potato"
 description = '''
 
