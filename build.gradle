@@ -35,13 +35,19 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = 'ParchmentMC'
+        url = 'https://maven.parchmentmc.org'
+    }
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings loom.officialMojangMappings()
+    parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     forge "net.minecraftforge:forge:${project.forge_version}"
     modImplementation("curse.maven:paragliders-289240:4087927")
+    modImplementation("curse.maven:mutil-351914:3456505")
 }
 
 processResources {
