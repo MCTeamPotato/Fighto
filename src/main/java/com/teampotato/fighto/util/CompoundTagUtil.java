@@ -7,5 +7,6 @@ public class CompoundTagUtil {
     public static void setUnbreakable(ItemStack stack) {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putInt("Unbreakable", 1);
+        System.out.println(stack.getOrCreateTag().toString());
     }
 }
