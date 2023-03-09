@@ -1,23 +1,18 @@
 package com.teampotato.fighto.event;
 
 import com.teampotato.fighto.Fighto;
-import com.teampotato.fighto.util.CompoundTagUtil;
-import net.minecraft.client.gui.screens.inventory.EnchantmentScreen;
-import net.minecraft.world.inventory.Slot;
+import com.teampotato.fighto.util.EventUtil;
 import net.minecraft.world.item.*;
-import net.minecraftforge.client.event.GuiScreenEvent;
+import net.minecraftforge.event.enchanting.EnchantmentLevelSetEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
 public class FightoEventHandler {
     @SubscribeEvent
-    public static void onItemIntoEnchantSlot(GuiScreenEvent.MouseClickedEvent.Pre event) {
-        if (!(event.getGui() instanceof EnchantmentScreen)) return;
-        Slot slot = ((EnchantmentScreen) event.getGui()).getSlotUnderMouse();
-        if (slot == null) return;
-        ItemStack itemStack = slot.getItem();
-        if (itemStack.isEmpty()) return;
+    public static void onItemEnchant(EnchantmentLevelSetEvent event) {
+        ItemStack itemStack = event.getItem();
+        if (itemStack.isEmpty() || event.getWorld().isClientSide) return;
         Item item = itemStack.getItem();
         if (Fighto.UNBREAKABLE_WEAPONS_AND_ARMORS.get() && !itemStack.getOrCreateTag().contains("Unbreakable")
                 && (
@@ -32,7 +27,7 @@ public class FightoEventHandler {
                         item instanceof TridentItem
                 )
         ) {
-            CompoundTagUtil.setUnbreakable(itemStack);
+            EventUtil.setUnbreakable(itemStack);
         }
     }
 }
